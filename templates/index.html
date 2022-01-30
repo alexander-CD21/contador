@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href={{ url_for( 'static', filename='/css/styles.css') }}>
+        <title>CONTADOR</title>
+    </head>
+    <body>
+        <div class="mostrador">
+
+            <div class="letra">
+                <h1>  CONTADOR </h1>
+            </div>
+
+            <div class="letra">
+                <h2>El cliente visito  {{ session["contador"] }} veces esta pagina</h2> 
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <div>
+                <form action="/contador2" method="POST">
+                    <div>
+                        <button type="submit" class="boton1">
+                            Agregar +2
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <form action="/destruir" method="GET">
+                    <div>
+                        <button type="submit" class="boton2">
+                            Reset
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
